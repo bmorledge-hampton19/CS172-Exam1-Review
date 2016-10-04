@@ -1,5 +1,4 @@
 #include "Dice.h"
-#include <ctime>
 #include <cstdlib>
 using namespace std;
 
@@ -7,6 +6,10 @@ Dice::Dice(int newSides)
 {
 	if (newSides > 3) sides = newSides;
 	else sides = 6;
+
+	// Initialize rolls to 0.
+	rolls = 0;
+
 }
 
 int Dice::Roll()
@@ -14,7 +17,7 @@ int Dice::Roll()
 	// Increment rolls.
 	rolls++;
 
-	return (rand() % sides);
+	return (rand() % sides + 1);
 }
 
 int Dice::GetRolls()

@@ -1,8 +1,12 @@
 #include <iostream>
 #include "Dice.h" // Include your Dice class here
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 
 int main() {
+
+	srand(time(NULL)); // Seed the RNG with time.
 
 	Dice d(6); // Declare a dice with 6 sides 
 	cout << d.Roll() << endl; // Outputs a value from 1 to 6
